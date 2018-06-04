@@ -1,0 +1,15 @@
+Los Ingredientes disponibles son:
+
+1.-Manzanas
+2.-Peras
+3.-Mangos
+4.-Bananos
+5.-Leche
+6.-Queso
+7.-Mantequilla
+8.-Quesillo
+9.-Brocoli
+10.-Zanahorias
+11.-Espinaca
+12.-Cebolla
+

@@ -3,9 +3,13 @@
 #include "Plato.h"
 #include "Ingredientes.h"
 #include <vector>
+#include <fstream>
+#include <string>
 
 using namespace std;
 using std::cout;
+
+void lectura();
 
 int main() {
 	int opcion;
@@ -39,11 +43,11 @@ int main() {
 				ingres.push_back(*ingre);
 				break;
 			case 2:
-				cout << ingres.size() << endl;
+				/*cout << ingres.size() << endl;
 				for(int i = 0; i < ingres.size(); i++){
 					cout<<".."<<ingres[i].getNombre()<<endl;
-				}
-				
+				}*/
+				lectura();
 				break;
 			case 3:
 
@@ -55,4 +59,23 @@ int main() {
 	}while(opcion != 4);
 
 	return 0;
+}
+
+void lectura() {
+	ifstream archivo;
+	string texto;
+
+	archivo.open("/home/rickyrom/Labs/lab_RicardoRomero/Ingedientes.txt", ios::in);//abrimos archivo
+
+	if(archivo.fail()) {
+		cout<<"No se pudo abrir el archivo"<<endl;
+		exit(1);
+	}
+
+	while(!archivo.eof()) {//mientras no sea el final del archivo
+		getline(archivo, texto);
+		cout<<texto<<endl;
+	}
+
+	archivo.close();//cerramos archivo
 }
